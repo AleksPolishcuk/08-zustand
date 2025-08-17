@@ -12,6 +12,7 @@ import NoteForm from "@/components/NoteForm/NoteForm";
 import Loader from "@/components/Loader/Loader";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import styles from "./Notes.module.css";
+import Link from "next/link";
 
 interface NotesClientProps {
   initialData: Awaited<ReturnType<typeof fetchNotes>>;
@@ -59,13 +60,13 @@ export default function NotesClient({ initialData, tag }: NotesClientProps) {
             onPageChange={setPage}
           />
         )}
-        <button
+        <Link
+          href="/notes/action/create"
           className={styles.button}
-          type="button"
           onClick={() => setModalIsOpen(true)}
         >
           Create +
-        </button>
+        </Link>
       </header>
       {isLoading && !data && <Loader />}
       {isError && <ErrorMessage />}
@@ -77,7 +78,7 @@ export default function NotesClient({ initialData, tag }: NotesClientProps) {
 
       {modalIsOpen && (
         <Modal onClose={() => setModalIsOpen(false)}>
-          <NoteForm onClose={() => setModalIsOpen(false)} />
+          <NoteForm />
         </Modal>
       )}
     </div>
