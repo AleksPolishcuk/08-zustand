@@ -2,11 +2,10 @@ import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
-
 import { Roboto } from "next/font/google";
 import type { Metadata } from "next";
 
-export const roboto = Roboto({
+const roboto = Roboto({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
@@ -41,8 +40,8 @@ export default function RootLayout({
   modal?: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={roboto.variable}>
+    <html lang="en" className={roboto.variable}>
+      <body>
         <TanStackProvider>
           <Header />
           <main>
