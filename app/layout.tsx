@@ -2,6 +2,7 @@ import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import "./globals.css";
+
 import { Roboto } from "next/font/google";
 import type { Metadata } from "next";
 
