@@ -1,5 +1,11 @@
 import type { NextConfig } from "next";
 
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "picsum.photos" }],
+  },
+};
+
 const NextConfig = {
   experimental: {
     typedRoutes: false,
@@ -8,4 +14,4 @@ const NextConfig = {
     ignoreBuildErrors: true,
   },
 };
-export default NextConfig;
+export default nextConfig;
