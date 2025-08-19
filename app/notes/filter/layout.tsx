@@ -1,22 +1,16 @@
-import SidebarNotes from "./@sidebar/default";
 import css from "./FilterLayout.module.css";
 
 export default function FilterLayout({
   children,
-  modal,
+  sidebar,
 }: {
   children: React.ReactNode;
-  modal?: React.ReactNode;
+  sidebar: React.ReactNode;
 }) {
   return (
     <div className={css.container}>
-      <aside className={css.sidebar}>
-        <SidebarNotes />
-      </aside>
-      <main className={css.main}>
-        {children}
-        {modal}
-      </main>
+      <aside className={css.sidebar}>{sidebar}</aside>
+      <main className={css.main}>{children}</main>
     </div>
   );
 }

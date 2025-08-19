@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "NoteHub - Your Personal Notes Manager",
     description:
       "NoteHub is a simple and efficient application for managing personal notes.",
-    url: "https://your-notehub-app.vercel/app",
+    url: "https://your-notehub-app.vercel.app",
     images: [
       {
         url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
@@ -31,14 +31,13 @@ export const metadata: Metadata = {
     ],
   },
 };
-
 export default function RootLayout({
   children,
   modal,
-}: {
+}: Readonly<{
   children: React.ReactNode;
   modal: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" className={roboto.variable}>
       <body>
