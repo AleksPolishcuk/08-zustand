@@ -13,11 +13,10 @@ import styles from "./Notes.module.css";
 import Link from "next/link";
 
 interface NotesClientProps {
-  initialData: Awaited<ReturnType<typeof fetchNotes>>;
   tag?: string;
 }
 
-export default function NotesClient({ initialData, tag }: NotesClientProps) {
+export default function NotesClient({ tag }: NotesClientProps) {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
@@ -42,8 +41,6 @@ export default function NotesClient({ initialData, tag }: NotesClientProps) {
         tag,
       }),
     placeholderData: keepPreviousData,
-    initialData:
-      page === 1 && !debouncedSearch && !tag ? initialData : undefined,
   });
 
   return (
